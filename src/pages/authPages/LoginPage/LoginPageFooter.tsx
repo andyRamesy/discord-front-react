@@ -21,7 +21,7 @@ const LoginPageFooter = ({ handleLogin, isFormValid }) => {
   return (
     <>
       <Tooltip title={!isFormValid ? getFormNotValid() : getFormValidMessage()}>
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <div style={{ display: "flex", justifyContent: "center", width:"fit-content" , margin: "auto"}}>
           <CustomPrimaryButton
             label="Login"
             additionalStyles={{ marginTop: "30px" }}

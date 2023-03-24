@@ -2,7 +2,13 @@ import LoginPage from "../pages/authPages/LoginPage/LoginPage";
 import RegisterPage from "../pages/authPages/RegisterPage/RegisterPage";
 import DashBoard from "../pages/DashBoard/DashBoard";
 
-const pagesData = [
+interface IPageData {
+  path: String;
+  element: Object;
+  title: String;
+}
+
+const pagesData:IPageData[] = [
   {
     path: "/login",
     element: <LoginPage />,
@@ -20,9 +26,9 @@ const pagesData = [
   },
   {
     path: "/",
-    element :  <DashBoard />,
-    title : "dashboard"
-  }
+    element: <DashBoard />,
+    title: "dashboard",
+  },
 ];
 
 export default pagesData;
