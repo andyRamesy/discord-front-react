@@ -1,8 +1,9 @@
 import { Typography } from "@mui/material";
+import "./RegisterPageHeader.css"
 
 const RegisterPageHeader = (): JSX.Element => {
   return (
-    <div style={styles.container}>
+    <div className="container">
       <Typography variant="h5" sx={{ color: "white" }}>
         Create account
       </Typography>
@@ -10,10 +11,5 @@ const RegisterPageHeader = (): JSX.Element => {
   );
 };
 
-const styles = {
-  container: {
-    display: "flex",
-  },
-};
 
 export default RegisterPageHeader;
