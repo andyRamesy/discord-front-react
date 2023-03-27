@@ -12,7 +12,7 @@ const RegisterPage = () => {
   const [isFormValid, setIsFormValid] = useState(false);
 
   useEffect(() => {
-    setIsFormValid(validateLoginForm({ mail, password, username }));
+    setIsFormValid(validateLoginForm({ username,mail, password }));
   }, [username, mail, password, setIsFormValid]);
 
   const handleRegister = () => {

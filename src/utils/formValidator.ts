@@ -9,9 +9,9 @@ export const validateLoginForm = ({
   mail,
   password,
 }: IMail): boolean => {
-  const isUsernameValid = validateUserName(username);
   const isMailValid = validateMail(mail);
   const isPasswordValid = validatePassword(password);
+  const isUsernameValid = username ? validateUserName(username) : true;
 
   return isMailValid && isPasswordValid && isUsernameValid;
 };
