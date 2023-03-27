@@ -1,0 +1,14 @@
+.container {
+  /* display: flex; */
+  margin-top: 10px;
+}
+
+.btnContainer {
+  display: flex;
+}
+
+.redirectRegister {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
