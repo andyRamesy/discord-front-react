@@ -13,6 +13,20 @@ const RegisterPageInputs = (props: any) => {
         type="text"
         placeholder="Enter your username"
       />
+      <InputWithLabel
+        value={mail}
+        setValue={setMail}
+        label="E-mail"
+        type="text"
+        placeholder="Enter e-mail"
+      />
+      <InputWithLabel
+        value={password}
+        setValue={setPassword}
+        label="Password"
+        type="password"
+        placeholder="Enter password"
+      />
     </div>
   );
 };

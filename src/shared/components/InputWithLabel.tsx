@@ -18,9 +18,9 @@ const Label = styled("p")({
 const Input = styled("input")({
   flexGrow: 1,
   height: "40px",
-  border: "1px solid red",
+  border: "1px solid black",
   borderRadius: "5px",
-  color: "#dcddde",
+  color: "#9b9b9b",
   background: "#3599h",
   margin: 0,
   fontSize: "16px",
