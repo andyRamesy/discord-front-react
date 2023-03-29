@@ -4,18 +4,26 @@ import RegisterPageHeader from "./RegisterPageHeader/RegisterPageHeader";
 import RegisterPageInputs from "./RegisterPageInputs/RegisterPageInputs";
 import RegisterPageFooter from "./RegisterPageFooter/RegisterPageFooter";
 import { validateLoginForm } from "../../../utils/formValidator";
+import { getActions } from "../../../store/actions/authActions";
+import { connect } from "react-redux";
 
-const RegisterPage = () => {
+const RegisterPage = ({ register }) => {
   const [username, setUsername] = useState("");
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
 
   useEffect(() => {
-    setIsFormValid(validateLoginForm({ username,mail, password }));
+    setIsFormValid(validateLoginForm({ username, mail, password }));
   }, [username, mail, password, setIsFormValid]);
 
   const handleRegister = () => {
+    const userDetails = {
+      username,
+      mail,
+      password,
+    };
+    register(userDetails, "");
     console.log("register");
   };
 
@@ -38,4 +46,10 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+const mapActionsToProps = (dispatch) => {
+  return {
+    ...getActions(dispatch),
+  };
+};
+
+export default connect(null, mapActionsToProps)(RegisterPage);
