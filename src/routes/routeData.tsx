@@ -20,7 +20,7 @@ const pagesData:IPageData[] = [
     title: "register",
   },
   {
-    path: "/dasboard",
+    path: "/dashboard",
     element: <DashBoard />,
     title: "dashboard",
   },

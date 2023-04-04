@@ -8,6 +8,7 @@ import { getActions } from "../../../store/actions/authActions";
 import { connect } from "react-redux";
 
 const RegisterPage = ({ register }) => {
+   
   const [username, setUsername] = useState("");
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,7 +24,7 @@ const RegisterPage = ({ register }) => {
       mail,
       password,
     };
-    register(userDetails, "");
+    register(userDetails, {});
     console.log("register");
   };
 
@@ -40,7 +41,7 @@ const RegisterPage = ({ register }) => {
       />
       <RegisterPageFooter
         handleRegister={handleRegister}
-        isFormValid={isFormValid}
+        isFormValid={!isFormValid}
       />
     </AuthBox>
   );
