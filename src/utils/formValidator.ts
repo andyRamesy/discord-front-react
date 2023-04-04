@@ -5,19 +5,19 @@ interface IMail {
 }
 
 export const validateLoginForm = ({
-  username,
+  // username,
   mail,
   password,
 }: IMail): boolean => {
   const isMailValid = validateMail(mail);
   const isPasswordValid = validatePassword(password);
-  const isUsernameValid = username ? validateUserName(username) : true;
+  // const isUsernameValid = username ? validateUserName(username) : true;
 
-  return isMailValid && isPasswordValid && isUsernameValid;
+  return isMailValid && isPasswordValid;
 };
 
 const validatePassword = (password: string): boolean => {
-  return password.length > 6 && password.length < 12;
+  return password.length > 3;
 };
 
 const validateMail = (mail: string): boolean => {
