@@ -29,7 +29,7 @@ const RegisterPageFooter = (props) => {
           <CustomPrimaryButton
             label="Register"
             additionalStyles={{}}
-            disabled={isFormValid}
+            disabled={!isFormValid}
             onClick={handleRegister}
           />
         </div>

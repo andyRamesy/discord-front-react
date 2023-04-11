@@ -4,11 +4,12 @@ import RegisterPageHeader from "./RegisterPageHeader/RegisterPageHeader";
 import RegisterPageInputs from "./RegisterPageInputs/RegisterPageInputs";
 import RegisterPageFooter from "./RegisterPageFooter/RegisterPageFooter";
 import { validateLoginForm } from "../../../utils/formValidator";
+import { useNavigate } from "react-router-dom";
 import { getActions } from "../../../store/actions/authActions";
 import { connect } from "react-redux";
 
 const RegisterPage = ({ register }) => {
-   
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,7 +25,7 @@ const RegisterPage = ({ register }) => {
       mail,
       password,
     };
-    register(userDetails, {});
+    register(userDetails, navigate);
     console.log("register");
   };
 
@@ -41,7 +42,7 @@ const RegisterPage = ({ register }) => {
       />
       <RegisterPageFooter
         handleRegister={handleRegister}
-        isFormValid={!isFormValid}
+        isFormValid={isFormValid}
       />
     </AuthBox>
   );
