@@ -23,7 +23,7 @@ const setUserDetails = (userDetails) => {
 const login = (userDetails, navigate) => {
   return async (dispatch) => {
     const response = await api.login(userDetails);
-    console.log("res login", response.err.response.data);
+    console.log("res login", response);
     if (response.error) {
       //show error msg
       dispatch(openAlertMessage(response.err.response.data))
