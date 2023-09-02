@@ -1,7 +1,7 @@
 import React from "react";
 import { styled } from "@mui/system";
 import AddFriendButton from "./AddFriendButton";
-
+import FriendsTitle from "./FriendsTitle";
 const MainContainer = styled("div")({
   width: "224px",
   height: "100%",
@@ -15,6 +15,7 @@ const FriendsSideBar = () => {
   return (
     <MainContainer>
       <AddFriendButton />
+      <FriendsTitle title="Private messages" />
     </MainContainer>
   );
 };
