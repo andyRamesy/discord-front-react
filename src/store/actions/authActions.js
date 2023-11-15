@@ -10,15 +10,16 @@ export const getActions = (dispatch) => {
     login: (userDetails, history) => dispatch(login(userDetails, history)),
     register: (userDetails, history) =>
       dispatch(register(userDetails, history)),
+    setUserDetails: (userDetails) => dispatch(setUserDetails(userDetails)),
   };
 };
 
 const setUserDetails = (userDetails) => {
-    return {
-        type: authActions.SET_USER_DETAILS,
-        userDetails
-    }
-}
+  return {
+    type: authActions.SET_USER_DETAILS,
+    userDetails,
+  };
+};
 
 const login = (userDetails, navigate) => {
   return async (dispatch) => {
@@ -26,7 +27,7 @@ const login = (userDetails, navigate) => {
     console.log("res login", response);
     if (response.error) {
       //show error msg
-      dispatch(openAlertMessage(response.err.response.data))
+      dispatch(openAlertMessage(response.err.response.data));
     } else {
       const { userDetails } = response?.data;
       localStorage.setItem("user", JSON.stringify(userDetails));
@@ -42,8 +43,7 @@ const register = (userDetails, navigate) => {
 
     if (response.error) {
       //show error msg
-      dispatch(openAlertMessage(response.err.response.data))
-
+      dispatch(openAlertMessage(response.err.response.data));
     } else {
       const { userDetails } = response?.data;
       localStorage.setItem("user", JSON.stringify(userDetails));

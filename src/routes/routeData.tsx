@@ -24,11 +24,6 @@ const pagesData:IPageData[] = [
     element: <DashBoard />,
     title: "dashboard",
   },
-  {
-    path: "/",
-    element: <DashBoard />,
-    title: "dashboard",
-  },
 ];
 
 export default pagesData;
